@@ -211,7 +211,7 @@ main(){
 
 ```
 
-#### Result example
+#### Result example：
 
 ![img](插入截图)
 
@@ -236,6 +236,7 @@ main()
     }
 }
 
+
 ```
 #### Result example
 
@@ -256,5 +257,6 @@ main()
 **_Archiving:_** 
 #### Search for a Zombie process on the Internet, debug and understand the program, and master the method of writing Zombie process.
 **_Compression:_** 
+
 
 **_Archiving:_** 
