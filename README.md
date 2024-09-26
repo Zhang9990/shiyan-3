@@ -110,7 +110,7 @@ void err_exit(char *err_s){
 #### Result example
 
 ![img]assets/3/f5cc6b138e912dd19f8540fbd36eb88.png
-![img]
+
 
 + ### Create a child process.
 #### Use fork function programming to create a child process, understand the process of execution of the parent process, the reference code is as follows, enter the source code, compile and run, view the results in the terminal.
