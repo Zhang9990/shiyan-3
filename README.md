@@ -109,7 +109,7 @@ void err_exit(char *err_s){
 ```
 #### Result example
 
-![img]assets/3/f5cc6b138e912dd19f8540fbd36eb88.png
+![img](assets/3/f5cc6b138e912dd19f8540fbd36eb88.png)
 
 
 + ### Create a child process.
