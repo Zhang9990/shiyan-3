@@ -108,7 +108,7 @@ void err_exit(char *err_s){
 
 ```
 #### Result example
-
+![img](assets/3/1.png)
 ![img](assets/3/2.png)
 
 
