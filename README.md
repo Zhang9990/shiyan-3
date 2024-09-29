@@ -176,8 +176,56 @@ main()
 ```
 
 #### Result example
+```
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include<sys/types.h>
+#include <sys/wait.h>
+main(void)
+pid t pid =0;
+int status;
+pid = fork();
+if(pid ==0)
+printf("I am the child.");execl("/bin/ls","ls","-1"，"/home/ubuntu/",(char *)0);perror("In exec():");
+if(pid >e)printf("I am the parent, and the child is %d.\n", pid);pid = wait(&status);printf("End of process %d:",pid);
+if(WIFEXITED(status)){
+printf("The process ended with exit(%d).\n",WEXITSTATUS(status));
+if(WIFSIGNALED(status)){
+printf("The process ended with kill -%d.\n", WTERMSIG(status));
+if(pid<o){
+perror("In fork():");
+exit(0);
+}
+#include<stdio.h> // printf()
+#include<stdlib.h>// exit()
+#include<sys/types.h> // pid t                                           
+ #include<sys/wait.h>//wait()                                                          
+#include<unistd.h>// fork
+int main(int argc, char **argv)
+pid t pid;
+pid = fork();
+if(pid==0)
+printf("It is the child process and pid is %d\n",getpid());
+int i=0;
+for(i=0;i<8;i++)
+printf("%d\n",i);
+exit(0);
+else if(pid >8)
+printf("It is the parent process and pid is %d\n",getpid());
+int status;
+wait(&status);
+printf("child is reaped\n");
+else
+printf("Error in forking..\n");                                                                                                      
+   exit(EXIT FAILURE)；                                                                                                                                        
+}                                                                                                                                                      
+   return 0；
+ }
+```
 
-![img](插入截图)
+![img](assets/5/1.png)
+![img](assets/5/2.png)
 
 + ### Master the use of exec() function family, exit() function and wait() function.
 #### The reference code is as follows, enter the source code, compile and run it, and view the result in the terminal
@@ -214,7 +262,6 @@ main(){
 
 #### Result example：
 
-![img](插入截图)
 
 + ### Master Zombie process writing.
 #### The reference code is as follows, enter the source code, compile and run it, and view the result in the terminal.
@@ -241,23 +288,24 @@ main()
 ```
 #### Result example
 
-![img](插入截图)
+![img](assets/6/1.png)
+![img](assets/6/2.png)
+![img](assets/6/3.png)
 
 + ### Thinking question
 #### What is the difference between basic and standard I/O operations?
-**_Compression:_** 
+**_Solution:_** ![img](assets/questions/1.png)
 
-**_Archiving:_** 
 #### The fork function has several different return values, what is the meaning of each?
-**_Compression:_** 
+**_Solution:_** ![img](assets/questions/2.png)
 
-**_Archiving:_** 
 #### Programming implementation using the exec function to call the "ls-1" command.
-**_Compression:_** 
+**_Solution:_** ![img](assets/questions/3.png)
+                ![img](assets/questions/32.png)
 
-**_Archiving:_** 
 #### Search for a Zombie process on the Internet, debug and understand the program, and master the method of writing Zombie process.
-**_Compression:_** 
+**_Solution:_** ![img](assets/questions/4.png)
+                ![img](assets/questions/42.png)
+                ![img](assets/questions/43.png)
 
 
-**_Archiving:_** 
