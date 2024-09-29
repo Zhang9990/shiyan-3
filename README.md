@@ -76,7 +76,7 @@ int main(void)
 ```
 #### Result example
 
-![img](插入截图)
+![img](assets/2/1.png)
 
 + ### Master the standard I/O operation programming.
 #### Master the use of fopen() function, fclose() function, fread() and fwrite() function through comprehensive examples, the reference code is as follows, enter the source code, compile and run, view the result in the terminal:
