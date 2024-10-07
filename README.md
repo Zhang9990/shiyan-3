@@ -309,4 +309,16 @@ main()
                 ![img](assets/questions/42.png)
                 ![img](assets/questions/43.png)
 
++ ### Division
+#### 张静歌:Team Leader，Responsible for the construction of the warehouse, document writing, and organization of tasks
+#### 周心怡:Responsible for mastering basic IO programming, as well as the corresponding part of code writing
+#### 郭若晗:Responsible for mastering the standard IO operation programming, as well as the corresponding part of the code writing
+#### 李圣炎:Responsible for creating sub-processes and writing corresponding codes
+#### 唐新豪:Responsible for mastering the use of exec function family, exit function and wait function, as well as the corresponding part of the code writing
+#### 赵浩宇:Responsible for mastering the writing of the Zombie process and the corresponding part of the code
+#### 张地:Responsible for solving thinking questions
+#### 张赛博:Two people are responsible for the recording of the video.
+#### 刘明庆:Two people are responsible for the recording of the video.
+#### 王佳慧:Help everyone and perfect the details
+
 
