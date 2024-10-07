@@ -176,6 +176,43 @@ main()
 ```
 
 #### Result example
+![img](assets/4/1.png)
+![img](assets/4/2.png)
+
++ ### Master the use of exec() function family, exit() function and wait() function.
+#### The reference code is as follows, enter the source code, compile and run it, and view the result in the terminal
+
+#### Code function: through fork(), wait() and exit() to implement process creation, concurrency and synchronization; Create a child process with fork, which invokes exec() to start Shell command ps to view the current process information of the system.
+```
+# include<stdio.h>
+# include<sys/types.h>
+#include<unistd.h>
+main(){
+    pid_t pid;
+    char * path="/bin/ps";char * argv[5]={"ps","-a","-x",NULL};
+    printf("Run ps with execve by child process:\n");
+    if((pid=fork())<0)
+    {
+        printf("fork error!");exit(0);
+    }
+    else if(pid==0)
+    {
+        if(execve(path,argv,0)<0)
+        {
+            printf("fork error!");
+            exit(0);
+        }
+        printf("child is ok!\n");
+        exit(0);
+    }
+    wait();
+    printf("it is ok!\n");
+    exit(0);
+}
+
+```
+
+#### Result example：
 ```
 #include <stdio.h>
 #include <unistd.h>
@@ -226,42 +263,6 @@ printf("Error in forking..\n");
 
 ![img](assets/5/1.png)
 ![img](assets/5/2.png)
-
-+ ### Master the use of exec() function family, exit() function and wait() function.
-#### The reference code is as follows, enter the source code, compile and run it, and view the result in the terminal
-
-#### Code function: through fork(), wait() and exit() to implement process creation, concurrency and synchronization; Create a child process with fork, which invokes exec() to start Shell command ps to view the current process information of the system.
-```
-# include<stdio.h>
-# include<sys/types.h>
-#include<unistd.h>
-main(){
-    pid_t pid;
-    char * path="/bin/ps";char * argv[5]={"ps","-a","-x",NULL};
-    printf("Run ps with execve by child process:\n");
-    if((pid=fork())<0)
-    {
-        printf("fork error!");exit(0);
-    }
-    else if(pid==0)
-    {
-        if(execve(path,argv,0)<0)
-        {
-            printf("fork error!");
-            exit(0);
-        }
-        printf("child is ok!\n");
-        exit(0);
-    }
-    wait();
-    printf("it is ok!\n");
-    exit(0);
-}
-
-```
-
-#### Result example：
-
 
 + ### Master Zombie process writing.
 #### The reference code is as follows, enter the source code, compile and run it, and view the result in the terminal.
