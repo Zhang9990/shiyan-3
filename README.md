@@ -215,50 +215,35 @@ main(){
 #### Result example：
 ```
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include<sys/types.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include <sys/wait.h>
-main(void)
-pid t pid =0;
-int status;
-pid = fork();
-if(pid ==0)
-printf("I am the child.");execl("/bin/ls","ls","-1"，"/home/ubuntu/",(char *)0);perror("In exec():");
-if(pid >e)printf("I am the parent, and the child is %d.\n", pid);pid = wait(&status);printf("End of process %d:",pid);
-if(WIFEXITED(status)){
-printf("The process ended with exit(%d).\n",WEXITSTATUS(status));
-if(WIFSIGNALED(status)){
-printf("The process ended with kill -%d.\n", WTERMSIG(status));
-if(pid<o){
-perror("In fork():");
-exit(0);
+
+int main() {
+    pid_t pid = fork(); // 创建子进程
+
+    if (pid < 0) {
+        // 创建失败
+        perror("fork");
+        exit(EXIT_FAILURE);
+    } else if (pid == 0) {
+        // 子进程
+        printf("Child process, pid = %d\n", getpid());
+        // 调用 exec() 启动 Shell 命令 ps
+        execlp("ps", "ps", NULL);
+    } else {
+        // 父进程
+        printf("Parent process, pid = %d\n", getpid());
+        // 等待子进程结束
+        int status;
+        waitpid(pid, &status, 0);
+        // 输出子进程的退出状态
+        printf("Child process exited with status %d\n", status);
+    }
+
+    return 0;
 }
-#include<stdio.h> // printf()
-#include<stdlib.h>// exit()
-#include<sys/types.h> // pid t                                           
- #include<sys/wait.h>//wait()                                                          
-#include<unistd.h>// fork
-int main(int argc, char **argv)
-pid t pid;
-pid = fork();
-if(pid==0)
-printf("It is the child process and pid is %d\n",getpid());
-int i=0;
-for(i=0;i<8;i++)
-printf("%d\n",i);
-exit(0);
-else if(pid >8)
-printf("It is the parent process and pid is %d\n",getpid());
-int status;
-wait(&status);
-printf("child is reaped\n");
-else
-printf("Error in forking..\n");                                                                                                      
-   exit(EXIT FAILURE)；                                                                                                                                        
-}                                                                                                                                                      
-   return 0；
- }
 ```
 
 ![img](assets/5/1.png)
